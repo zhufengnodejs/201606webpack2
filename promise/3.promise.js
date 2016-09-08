@@ -10,8 +10,9 @@ var promise = new Promise(function(resolve,reject,notify){
     rs.setEncoding('utf8');//设置编码的话data就成了字符串，否则是buffer
     var result = '';//累加每次读取的内容
     rs.on('data',function(data){
+        //当有进展的时候，也就是读取一部分数据的时候会调用notify进行通知
         notify(data);
-        result+=data;
+        result+=data;//累加每次读到的内容
     });
     rs.on('end',function(){//文件读完之后会触发end事件，成功的回调
         resolve(result);
@@ -20,6 +21,7 @@ var promise = new Promise(function(resolve,reject,notify){
         reject(error);
     });
 });
+//成功回调 失败回调 进展回调
 promise.then(function(data){
     console.log(data);
 },function(error){
