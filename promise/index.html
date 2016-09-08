@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+手机号:<input id="phone" type="text"><button onclick="getUsername()">查询</button>
+<div id="username"></div>
+</body>
+<script>
+    /**
+     * 1. 获取用户填写的手机号
+     * 2. 先请求getWeixinByPhone获取微信号
+     * 3. 再请求getUserNameByWeixin获取到用户名
+     */
+    function getUsername(){
+        var phone = document.querySelector('#phone').value;
+        //$.get(`/getWeixinByPhone/${phone}`)
+        $.ajax({
+            url:'http://localhost:9090/getWeixinByPhone/'+phone,
+            method:'GET',
+            dataType:'json',
+            success:function(result){
+                $.ajax({
+                    url:'http://localhost:9090/getUserNameByWeixin/'+result.data,
+                    method:'GET',
+                    dataType:'json',
+                    success:function(result){
+                        console.log(result);
+                        document.querySelector('#username').innerHTML = result.data;
+                    }
+                })
+           }
+        })
+    }
+</script>
+</html>
