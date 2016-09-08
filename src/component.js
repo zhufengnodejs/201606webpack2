@@ -1,1 +1,1 @@
-module.exports = 'zfpx';
+module.exports = 'zfpx5';
