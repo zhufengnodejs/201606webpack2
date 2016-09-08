@@ -30,6 +30,15 @@ module.exports = {
           {
              test:/\.less$/,//凡是以less结尾的文件
              loader:'style!css!less'
+          },{
+             test:/\.css$/,//css加载器
+             loader:'style!css'
+          },{
+              test:/\.(eot|svg|ttf|woff|woff2)$/,//图标加载器
+              loader:'url'
+          },{
+              test:/\.(jpg|png|gif)$/,//图片加载器
+              loader:'url?limit=8192'
           }
       ]
     }
