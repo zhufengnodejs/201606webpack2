@@ -10,6 +10,14 @@ module.exports = {
         path:'./build',//配置路径
         filename:'bundle.js'//配置输出的文件名
     },
+    devServer:{
+      port:8080,//端口号
+      contentBase:'./build' //静态文件根目录
+    },
+    resolve:{
+        //扩展名是数组，第一个必须是空字符，第二个开始必须以.开头
+        extensions:["",'.js','.css','.json']
+    },
     //配置模块
     module:{
         //loader实现各种各样的web资源到JS模块的映射
@@ -18,6 +26,10 @@ module.exports = {
           {
               test:/\.js$/, //凡是以点结尾的文件都用
               loader:'babel'
+          },
+          {
+             test:/\.less$/,//凡是以less结尾的文件
+             loader:'style!css!less'
           }
       ]
     }
