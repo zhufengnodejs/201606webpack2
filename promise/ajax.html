@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+手机号:<input id="phone" type="text"><button onclick="getUsername()">查询</button>
+<div id="username"></div>
+</body>
+<script>
+    function ajax({url,method='GET',dataType='json'}){
+        return new Promise(function(resolve,reject){
+            var xhr = new XMLHttpRequest();
+            xhr.open(method,url,true);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState ==4){
+                    if(/2\d{2}/.test(xhr.status)){
+                        if(dataType == 'json')
+                            resolve(JSON.parse(xhr.responseText));
+                        else
+                            resolve(xhr.responseText);
+                    }
+                }
+            }
+            xhr.send();
+        });
+    }
+    /**
+     * 1. 获取用户填写的手机号
+     * 2. 先请求getWeixinByPhone获取微信号
+     * 3. 再请求getUserNameByWeixin获取到用户名
+     */
+    function getUsername(){
+        var phone = document.querySelector('#phone').value;
+        //$.get(`/getWeixinByPhone/${phone}`)
+        ajax({
+            url:'http://localhost:9090/getWeixinByPhone/'+phone,
+            method:'GET',
+            dataType:'json'
+        })
+        .then(function(data){
+            return ajax({
+                url:'http://localhost:9090/getUserNameByWeixin/'+data.data,
+                method:'GET',
+                dataType:'json'
+            })
+        })
+        .then(function(data){
+            document.querySelector('#username').innerHTML = data.data;
+        });
+    }
+</script>
+</html>

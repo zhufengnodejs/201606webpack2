@@ -2,10 +2,11 @@ class Promise{
     //构造函数
    constructor(fn){
      this._status = 'unfulfilled';//初始态
+     var self = this;
        //成功时可以调用
-     var resolve = (data)=>{
-        this._status = 'fulfilled';//成功态
-        this._fulfilledHandler(data);//调用成功的回调
+     var resolve = function(data){
+         self._status = 'fulfilled';//成功态
+         self._fulfilledHandler(data);//调用成功的回调
      }
        //失败时可以调用
      var reject = (error)=>{
