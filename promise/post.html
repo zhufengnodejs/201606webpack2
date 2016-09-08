@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="jquery.min.js"></script>
 </head>
 <body>
 手机号:<input id="phone" type="text"><button onclick="getUsername()">查询</button>
@@ -20,13 +19,15 @@
         var phone = document.querySelector('#phone').value;
         //$.get(`/getWeixinByPhone/${phone}`)
         $.ajax({
-            url:'http://localhost:9090/getWeixinByPhone/'+phone,
-            method:'GET',
+            url:'http://localhost:9090/getWeixinByPhone',
+            method:'POST',
+            data:{phone:phone},
             dataType:'json',
             success:function(result){
                 $.ajax({
-                    url:'http://localhost:9090/getUserNameByWeixin/'+result.data,
-                    method:'GET',
+                    url:'http://localhost:9090/getUserNameByWeixin',
+                    method:'POST',
+                    data:{weixin:result.data},
                     dataType:'json',
                     success:function(result){
                         document.querySelector('#username').innerHTML = result.data;
