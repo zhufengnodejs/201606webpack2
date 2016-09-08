@@ -4,12 +4,13 @@
  */
 var fs = require('fs');
 var Promise = require('./Promise');
-var promise = new Promise(function(resolve,reject){
+var promise = new Promise(function(resolve,reject,notify){
     //一次读三个字节，触发一次data事件
     var rs = fs.createReadStream('./1.txt',{highWaterMark:3});
     rs.setEncoding('utf8');//设置编码的话data就成了字符串，否则是buffer
     var result = '';//累加每次读取的内容
     rs.on('data',function(data){
+        notify(data);
         result+=data;
     });
     rs.on('end',function(){//文件读完之后会触发end事件，成功的回调
@@ -23,4 +24,6 @@ promise.then(function(data){
     console.log(data);
 },function(error){
     console.error(error);
+},function(data){
+    console.log('process:',data);
 });

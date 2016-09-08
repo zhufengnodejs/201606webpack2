@@ -17,7 +17,6 @@ class Promise{
        this._fulfilledHandler = fulfilledHandler;
        this._errorHandler = errorHandler;
    }
-
 }
 
 module.exports = Promise;
