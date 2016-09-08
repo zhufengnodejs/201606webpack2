@@ -9,6 +9,17 @@ module.exports = {
     output:{
         path:'./build',//配置路径
         filename:'bundle.js'//配置输出的文件名
+    },
+    //配置模块
+    module:{
+        //loader实现各种各样的web资源到JS模块的映射
+        //配置一系列的加载器，是一个数组
+      loaders:[
+          {
+              test:/\.js$/, //凡是以点结尾的文件都用
+              loader:'babel'
+          }
+      ]
     }
 }
 
