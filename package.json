@@ -1,0 +1,33 @@
+{
+  "name": "201606webpack2",
+  "version": "1.0.0",
+  "description": "```\r git clone https://github.com/zhufengnodejs/webpack-lesson\r ```\r ### 2. 进入项目目录\r ```\r cd webpack-lesson\r ```",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.25.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhufengnodejs/201606webpack2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhufengnodejs/201606webpack2/issues"
+  },
+  "homepage": "https://github.com/zhufengnodejs/201606webpack2#readme"
+}
