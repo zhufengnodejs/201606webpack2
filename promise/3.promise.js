@@ -3,6 +3,7 @@
  * 失败调失败的回调
  */
 var fs = require('fs');
+var Promise = require('./Promise');
 var promise = new Promise(function(resolve,reject){
     //一次读三个字节，触发一次data事件
     var rs = fs.createReadStream('./1.txt',{highWaterMark:3});
