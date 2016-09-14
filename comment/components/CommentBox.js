@@ -16,6 +16,12 @@ export default class CommentBox extends React.Component{
             this.setState({comments});
         })
     }
+    addComment(comment){//{name,content}
+        $.post(this.props.url,comment).then(comment=>{//{_id date}
+            this.state.comments.push(comment);
+            this.setState({comments:this.state.comments});
+        })
+    }
     render(){
         return (
             <div className="container">
@@ -25,7 +31,7 @@ export default class CommentBox extends React.Component{
                     </div>
                 </div>
                 <CommentList comments={this.state.comments}></CommentList>
-                <CommentForm></CommentForm>
+                <CommentForm addComment={this.addComment.bind(this)}></CommentForm>
             </div>
         )
     }

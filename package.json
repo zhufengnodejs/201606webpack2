@@ -4,6 +4,7 @@
   "description": "```\r git clone https://github.com/zhufengnodejs/webpack-lesson\r ```\r ### 2. 进入项目目录\r ```\r cd webpack-lesson\r ```",
   "main": "webpack.config.js",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "moment": "^2.15.0",
     "mongoose": "^4.6.0"
