@@ -5,7 +5,7 @@ var OpenBrowserWebpackPlugin = require('open-browser-webpack-plugin');
 var webpack = require('webpack');
 module.exports = {
     //指定打包的入口文件
-    entry:'./react/index.js',
+    entry:'./comment/index.js',
     //指定输出文件路径和文件名
     output:{
         path:'./build',//文件路径
@@ -22,7 +22,7 @@ module.exports = {
             {
                 test:/\.js$/,//设置针对何种类型的文件名如何加载
                 loader:'babel',//加载器，会找.babelrc来读取配置
-                include:path.resolve('./react'),//指定要包含的目录
+                include:path.resolve('./comment'),//指定要包含的目录
                 exclude:/node_modules/ //指定要排除的目录
             },
             {
@@ -40,7 +40,7 @@ module.exports = {
         // 以index.html文件作为模板，自动插入生成的打包后的文件
         //并保存到目标目录中
         new HtmlWebpackPlugin({
-            template:'./react/index.html'
+            template:'./comment/index.html'
         }),
         new OpenBrowserWebpackPlugin({
             url:'http://localhost:8080'

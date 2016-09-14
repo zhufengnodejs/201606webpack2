@@ -5,7 +5,7 @@ import Preview from './Preview.js';
 export default  React.createClass({
     //获取初始状态对象
     getInitialState(){
-      return {username:'admin',password:'admin'};
+      return {username:'',password:''};
     },
     setVal(attr,val){// username, '张三'  password 123456
         var update = {};

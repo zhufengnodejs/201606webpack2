@@ -28,7 +28,9 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "react-build": "webpack --config webpack.config.react.js",
-    "react-dev": "webpack-dev-server --config webpack.config.react.js"
+    "react-dev": "webpack-dev-server --config webpack.config.react.js",
+    "comment-build": "webpack --config webpack.config.comment.js",
+    "comment-dev": "webpack-dev-server --config webpack.config.comment.js"
   },
   "repository": {
     "type": "git",
