@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "moment": "^2.15.0",
     "mongoose": "^4.6.0"
   },
   "devDependencies": {
