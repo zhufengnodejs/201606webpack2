@@ -24,7 +24,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "react_build": "webpack --config webpack.config.react.js"
   },
   "repository": {
     "type": "git",
