@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from './Comment';
 export default class CommentList extends React.Component{
     constructor(props){
         super(props);
@@ -8,12 +9,12 @@ export default class CommentList extends React.Component{
             <div className="row">
                 <div className="col-xs-12">
                     <ul className="list-group">
-                        <li className="list-group-item">
-                            张三:今天天气真好   2016年9月14日16:01:03
-                        </li>
-                        <li className="list-group-item">
-                            李四:是,特别好   2016年9月14日16:01:21
-                        </li>
+                        <Comment name="张三" date="2016">
+                            今天天气真好
+                        </Comment>
+                        <Comment name="李四" date="2017">
+                            今天雨很大
+                        </Comment>
                     </ul>
                 </div>
             </div>

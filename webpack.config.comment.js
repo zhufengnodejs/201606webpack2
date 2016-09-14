@@ -21,7 +21,7 @@ module.exports = {
         loaders:[
             {
                 test:/\.js$/,//设置针对何种类型的文件名如何加载
-                loader:'babel',//加载器，会找.babelrc来读取配置
+                loaders:['babel'],//加载器，会找.babelrc来读取配置
                 include:path.resolve('./comment'),//指定要包含的目录
                 exclude:/node_modules/ //指定要排除的目录
             },
