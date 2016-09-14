@@ -8,15 +8,17 @@ export default class CommentForm extends React.Component{
         event.preventDefault();
         var name = this.refs.name.value;
         var content = this.refs.content.value;
-        var comment =  {name,content};
+        var comment =  {name,content,date:Date.now()};
         this.props.addComment(comment);
+        this.refs.name.value = '';
+        this.refs.content.value = '';
         return false;
     }
     render(){
         return (
             <div className="row">
                 <div className="col-xs-12">
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit.bind(this)}>
                         <div className="form-group">
                             <label htmlFor="name">姓名</label>
                             <input ref="name" id="name" type="text" className="form-control"/>
