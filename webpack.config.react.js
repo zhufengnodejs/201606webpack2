@@ -7,6 +7,11 @@ module.exports = {
         path:'./build',//文件路径
         filename:'bundle.js'//文件名
     },
+    devServer:{//启动的就是一个express服务器
+      inline:true,//当源代码发生改变的时候实时刷新浏览器
+      contentBase:'./build', //app.use(express.static('./build'));
+      port:8080 //默认端口号8080
+    },
     module:{
         loaders:[
             {
