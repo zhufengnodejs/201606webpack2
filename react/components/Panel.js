@@ -7,11 +7,16 @@ export default  React.createClass({
     getInitialState(){
       return {username:'admin',password:'admin'};
     },
+    setVal(attr,val){// username, '张三'  password 123456
+        var update = {};
+        update[attr] = val;
+        this.setState(update);
+    },
     render(){
         return (
             <div className="container">
-                <Form data={this.state}></Form>
-                <Preview data={this.state}></Preview>
+                <Form setVal={this.setVal}  {...this.state}></Form>
+                <Preview {...this.state}></Preview>
             </div>
         )
     }

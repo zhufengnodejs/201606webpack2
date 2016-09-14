@@ -12,10 +12,10 @@ export default React.createClass({
                     </thead>
                     <tbody>
                     <tr>
-                        <td>用户名</td><td>{this.props.data.username}</td>
+                        <td>用户名</td><td>{this.props.username}</td>
                     </tr>
                     <tr>
-                        <td>密码</td><td>{this.props.data.password}</td>
+                        <td>密码</td><td>{this.props.password}</td>
                     </tr>
                     </tbody>
 
