@@ -5,13 +5,13 @@ import Preview from './Preview.js';
 export default  React.createClass({
     //获取初始状态对象
     getInitialState(){
-      return {user:{username:'admin',password:'admin'}};
+      return {username:'admin',password:'admin'};
     },
     render(){
         return (
             <div className="container">
-                <Form data={this.state.user}></Form>
-                <Preview data={this.state.user}></Preview>
+                <Form data={this.state}></Form>
+                <Preview data={this.state}></Preview>
             </div>
         )
     }

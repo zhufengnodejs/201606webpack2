@@ -6,11 +6,11 @@ export default React.createClass({
             <form>
                 <div className="form-group">
                     <label htmlFor="username">用户名</label>
-                    <input type="text" className="form-control"/>
+                    <input defaultValue={this.props.data.username} type="text" className="form-control"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">密码</label>
-                    <input type="password" className="form-control"/>
+                    <input defaultValue={this.props.data.password} type="text" className="form-control"/>
                 </div>
             </form>
         )
