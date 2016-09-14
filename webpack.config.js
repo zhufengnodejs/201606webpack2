@@ -11,6 +11,7 @@ module.exports = {
         filename:'bundle.js'//配置输出的文件名
     },
     devServer:{
+        inline:true,
       port:8080,//端口号
       contentBase:'./build' //静态文件根目录
     },
