@@ -1,9 +1,13 @@
 import React from 'react';
 
-export var Preview  = React.createClass({
+export default React.createClass({
     render(){
         return (
-
+            <div>
+                <pre>
+                   ee
+                </pre>
+            </div>
         )
     }
 });

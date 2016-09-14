@@ -1,6 +1,6 @@
 import React from 'react';
 
-export var Form  = React.createClass({
+export default React.createClass({
     render(){
         return (
             <form>
