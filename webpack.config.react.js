@@ -2,7 +2,7 @@ var path = require('path');
 //生成产出html文件的插入
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserWebpackPlugin = require('open-browser-webpack-plugin');
-
+var webpack = require('webpack');
 module.exports = {
     //指定打包的入口文件
     entry:'./react/index.js',
