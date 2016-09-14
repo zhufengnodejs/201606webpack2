@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentBox from './components/CommentBox';
 require('bootstrap/dist/css/bootstrap.css');
-ReactDOM.render(<CommentBox/>,
+ReactDOM.render(<CommentBox url="http://localhost:9090/comments"/>,
     document.querySelector('#app')
 );
 
